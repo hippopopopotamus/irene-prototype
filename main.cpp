@@ -75,10 +75,10 @@ Application_state process_menu() {
   bool quit {false};
   int current_quote_index = 0;
   std::array<std::string, 5> quotes = {
+    "¡Qué sería del sol si no tuviera personas como vos sobre las que brillar!",
     "Hoy estás radiante.",
     "La vida te devolverá el bien que le hiciste a otras personas.",
     "No dejes de soñar y de esforzarte como lo estás haciendo últimamente.",
-    "¡Qué sería del sol si no tuviera personas como vos sobre las que brillar!",
     "Nunca dejaré de apoyarte.",
   };
 
@@ -137,12 +137,12 @@ Application_state process_inbox() {
   write_message("| [NUEVO!]   | [ADM]       | Urgente: sobrecarga en el núcleo.             |\n", WRITE_SPEED_FAST);
 
   std::cout << TERM_GREEN_COLOUR;
+  write_message("| [LEÍDO]    | [Karol C]   | Pehehehe, I'm a bit clumsy, you see!          |\n", WRITE_SPEED_FAST);
+  write_message("| [LEÍDO]    | [Heloisa]   | YeAH, I just was going to AsK the SamE thIng  |\n", WRITE_SPEED_FAST);
   write_message("| [LEÍDO]    | [Anna]      | El caballo m'ha mirao' mal...                 |\n", WRITE_SPEED_FAST);
   write_message("| [LEÍDO]    | [Anna]      | Estoy hasta el coño de las oposiciones.       |\n", WRITE_SPEED_FAST);
-  write_message("| [LEÍDO]    | [Luis]      | Sobre las sustancias...                       |\n", WRITE_SPEED_FAST);
-  write_message("| [LEÍDO]    | [Luis]      | Vamo' arribaaaaaaaaaaaa!                      |\n", WRITE_SPEED_FAST);
   write_message("| [LEÍDO]    | [Jalima]    | Cariño, mira, que al final no podré ir...     |\n", WRITE_SPEED_FAST);
-  write_message("| [LEÍDO]    | [Jalima]    | Cariño, yo me apunto a la fiesta!             |\n", WRITE_SPEED_FAST);
+  write_message("| [LEÍDO]    | [Jalima]    | ¡Yo me apunto!                                |\n", WRITE_SPEED_FAST);
   write_message("| [LEÍDO]    | [Salva]     | Ay, la Kovaaaaaaaaaaaaaaaaaaaaaa!             |\n", WRITE_SPEED_FAST);
 
   std::cout << TERM_CYAN_COLOUR;
@@ -170,43 +170,48 @@ Application_state process_inbox_read_message() {
   std::cout << TERM_CLEAR_SCREEN << TERM_POSITION_CURSOR_ON_TOP;
 
   std::cout << TERM_RED_COLOUR;
-  write_message("=======================================================================\n", WRITE_SPEED_FAST);
+  write_message("=============================================================\n", WRITE_SPEED_FAST);
   write_message("[!] ALERTA DEL SISTEMA: SOBRECARGA EN EL NÚCLEO DETECTADA [!]\n", WRITE_SPEED_NORMAL);
-  write_message("=======================================================================\n\n", WRITE_SPEED_FAST);
+  write_message("=============================================================\n\n", WRITE_SPEED_FAST);
 
   std::cout << TERM_YELLOW_COLOUR;
   write_message("[INFO] Escaneando árbol de procesos en la mente de Irene...\n\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(1'000ms);
 
   std::cout << TERM_CYAN_COLOUR;
-  write_message("+----------------------+----------------+--------+----------+\n", WRITE_SPEED_FAST);
-  write_message("| PROCESO              | ORIGEN         | % CPU  | ESTADO   |\n", WRITE_SPEED_FAST);
-  write_message("+----------------------+----------------+--------+----------+\n", WRITE_SPEED_FAST);
+  write_message("+----------------------+----------------+--------+-----------+\n", WRITE_SPEED_FAST);
+  write_message("| PROCESO              | ORIGEN         | % CPU  | ESTADO    |\n", WRITE_SPEED_FAST);
+  write_message("+----------------------+----------------+--------+-----------+\n", WRITE_SPEED_FAST);
   std::cout << TERM_GREEN_COLOUR;
-  write_message("| inteligencia         | irene          |  12.5% | BRILLANDO|\n", WRITE_SPEED_FAST);
-  write_message("| empatía              | irene          |  18.0% | INMENSA  |\n", WRITE_SPEED_FAST);
-  write_message("| belleza_natural      | irene          |  20.0% | RADIANTE |\n", WRITE_SPEED_FAST);
-  write_message("| humor                | irene          |  15.2% | ÓPTIMO   |\n", WRITE_SPEED_FAST);
-  write_message("| carisma              | irene          |  14.2% | ÓPTIMO   |\n", WRITE_SPEED_FAST);
+  write_message("| inteligencia         | irene          |  12.5% | BRILLANDO |\n", WRITE_SPEED_FAST);
+  write_message("| empatía              | irene          |  18.0% | INMENSA   |\n", WRITE_SPEED_FAST);
+  write_message("| belleza_natural      | irene          |  20.0% | RADIANTE  |\n", WRITE_SPEED_FAST);
+  write_message("| humor                | irene          |  15.2% | ÓPTIMO    |\n", WRITE_SPEED_FAST);
+  write_message("| carisma              | irene          |  14.2% | ÓPTIMO    |\n", WRITE_SPEED_FAST);
 
   std::cout << TERM_RED_COLOUR;
   std::this_thread::sleep_for(500ms);
 
-  write_message("| auditoría_de_imagen  | perfeccionismo |  99.9% | AGOTADOR |\n", WRITE_SPEED_SLOW);
+  write_message("| auditoría_de_imagen  | perfeccionismo |  99.9% | AGOTADOR  |\n", WRITE_SPEED_SLOW);
 
   std::cout << TERM_CYAN_COLOUR;
-  write_message("+----------------------+----------------+--------+----------+\n", WRITE_SPEED_FAST);
+  write_message("+----------------------+----------------+--------+-----------+\n", WRITE_SPEED_FAST);
 
   std::cout << TERM_YELLOW_COLOUR;
   write_message("\n[DIAGNÓSTICO] El proceso 'auditoría_de_imagen' está consumiendo muchos recursos.\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(1'000ms);
 
   std::cout << TERM_NORMAL_COLOUR;
-  write_message("Siempre cuidás cada detalle, la ropa, los accesorios, buscando que todo sea perfecto...\n", WRITE_SPEED_NORMAL);
+  write_message("Siempre cuidás cada detalle, la ropa, los accesorios, el vibe, buscando que todo sea perfecto...\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(1'500ms);
 
   write_message("\nPero, en realidad, no hay ninguna campaña que aprobar ni métricas que cumplir...\n", WRITE_SPEED_NORMAL);
-  write_message("Tu versión 'sin editar' ya es lo más deslumbrante que vi en mi vida.\n", WRITE_SPEED_NORMAL);
+  std::this_thread::sleep_for(1'500ms);
+  write_message("\nTu versión natural ya es lo más deslumbrante que vi en mi vida.\n", WRITE_SPEED_NORMAL);
+  std::this_thread::sleep_for(1'500ms);
+  write_message("\nDelante de las cámaras estás estupenda,\n", WRITE_SPEED_NORMAL);
+  std::this_thread::sleep_for(1'500ms);
+  write_message("pero detrás de las cámaras, sos perfecta.\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(1'500ms);
 
   std::cout << TERM_CYAN_COLOUR;
@@ -223,7 +228,7 @@ Application_state process_inbox_read_message() {
 
     if (option == 'n' || option == 'N') {
       std::cout << TERM_YELLOW_COLOUR;
-      write_message("Sé que es difícil soltar el control... pero por hoy, déjate cuidar un poco, ¿sí? :)\n", WRITE_SPEED_FAST);
+      write_message("Sé que es difícil soltar el control... pero déjate cuidar un poco, ¿sí? :)\n", WRITE_SPEED_FAST);
       std::cout << TERM_NORMAL_COLOUR;
     }
   }
@@ -240,12 +245,12 @@ Application_state process_chronicle() {
   std::cout << TERM_CLEAR_SCREEN << TERM_POSITION_CURSOR_ON_TOP;
 
   std::cout << TERM_YELLOW_COLOUR;
-  write_message("[SISTEMA] Intentando cerrar del proceso 'auditoría_de_imagen'...\n", WRITE_SPEED_NORMAL);
+  write_message("[SISTEMA] Intentando cerrar el proceso 'auditoría_de_imagen'...\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(1'500ms);
 
   std::cout << TERM_RED_COLOUR;
   write_message("[ERROR] Permisos insuficientes.\n", WRITE_SPEED_FAST);
-  write_message("[ERROR] El firewall 'síndrome_del_impostor' está bloqueando la acción.\n\n", WRITE_SPEED_FAST);
+  write_message("[ERROR] El firewall está bloqueando la acción.\n\n", WRITE_SPEED_FAST);
   std::this_thread::sleep_for(1'500ms);
 
   std::cout << TERM_CYAN_COLOUR;
@@ -301,7 +306,6 @@ Application_state process_chronicle() {
     }
   }
 
-  // --- PREGUNTA 3 ---
   while (true) {
     write_message("[Dato 3/3]: ¿Cuál es el mejor año de la historia?\n", WRITE_SPEED_FAST);
     std::cout << TERM_YELLOW_COLOUR << "> ";
@@ -332,7 +336,7 @@ Application_state process_chronicle() {
   std::this_thread::sleep_for(1'500ms);
 
   std::cout << TERM_NORMAL_COLOUR;
-  write_message("Sé que a veces sentís que tenés que estar al 200% para que el mundo te acepte.\n", WRITE_SPEED_NORMAL);
+  write_message("Creo que a veces sentís que tenés que estar al 200% para que el mundo te acepte.\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(2'500ms);
 
   write_message("\nPero tus procesos principales funcionan con una fluidez asombrosa.\n", WRITE_SPEED_NORMAL);
@@ -420,6 +424,11 @@ Application_state process_credits() {
   write_message("                          ***\n", WRITE_SPEED_FAST);
   write_message("                           *\n\n", WRITE_SPEED_FAST);
   std::this_thread::sleep_for(3'500ms);
+
+  write_message("Te quiero mucho.\n", WRITE_SPEED_NORMAL);
+  write_message("Con cariño,\n", WRITE_SPEED_NORMAL);
+  write_message("Luis.", WRITE_SPEED_NORMAL);
+  std::this_thread::sleep_for(3'000ms);
 
   std::cout << TERM_GREEN_COLOUR;
   write_message("--------------------------------------------------------------------------\n", WRITE_SPEED_FAST);
