@@ -7,7 +7,6 @@
 
 using namespace std::literals::chrono_literals;
 
-// Paleta de colores extendida para la interfaz
 std::string const TERM_GREEN_COLOUR           {"\x1b[32m"};
 std::string const TERM_RED_COLOUR             {"\x1b[31m"};
 std::string const TERM_YELLOW_COLOUR          {"\x1b[33m"};
@@ -431,7 +430,7 @@ Application_state process_credits() {
   std::this_thread::sleep_for(3'000ms);
 
   std::cout << TERM_GREEN_COLOUR;
-  write_message("--------------------------------------------------------------------------\n", WRITE_SPEED_FAST);
+  write_message("\n--------------------------------------------------------------------------\n", WRITE_SPEED_FAST);
   write_message("[SISTEMA] Cerrando sesión de Friendship-OS...\n", WRITE_SPEED_NORMAL);
   std::this_thread::sleep_for(1'000ms);
 
